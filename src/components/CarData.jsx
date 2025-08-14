@@ -108,7 +108,7 @@ const cars = [
 
 const CarData = () => {
     return (
-        <div className="max-w-7xl mx-auto px-4">
+        <div id="#vehicle" className="max-w-7xl mx-auto px-4">
             {/* Header */}
             <div className="flex items-center justify-between mb-6">
                 <h1 className="text-4xl font-bold">Choose the car that suits you</h1>
