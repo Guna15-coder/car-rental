@@ -3,10 +3,12 @@ import Navbar from "./Navbar";
 
 const Hero = () => {
     return (
-        <div className="relative w-full h-screen flex flex-col justify-between">
+        <div className="relative w-full min-h-screen flex flex-col justify-between">
             <Navbar />
+
+            {/* Background Image */}
             <div className="absolute top-0 left-0 w-full h-full overflow-hidden -z-10 rounded-lg">
-                <div className="absolute top-0 left-0 w-full h-full bg-black/20  rounded-lg"></div>
+                <div className="absolute top-0 left-0 w-full h-full bg-black/20 rounded-lg"></div>
                 <img
                     className="w-full h-full object-cover rounded-lg"
                     src="https://gadgetlite.com/wp-content/uploads/2024/06/Tips-to-Protect-Your-Car-This-Summer-800x400.jpg.webp"
@@ -14,11 +16,18 @@ const Hero = () => {
                 />
             </div>
 
-            <div className="flex flex-col mx-10 mb-10">
-                <div className="text-white mb-8">
-                    <p className="text-6xl font-bold">Rent a Car for Every Journey</p>
+            {/* Content */}
+            <div className="flex flex-col mx-4 md:mx-10 mb-10">
+                {/* Heading */}
+                <div className="text-white mb-6 md:mb-8">
+                    <p className="text-3xl md:text-6xl font-bold leading-tight">
+                        Rent a Car for Every Journey
+                    </p>
                 </div>
-                <div className="h-auto bg-white rounded-lg p-6 shadow-md">
+
+                {/* Search Box */}
+                <div className="h-auto bg-white rounded-lg p-4 md:p-6 shadow-md">
+                    {/* Form Inputs */}
                     <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
                         {/* Departure */}
                         <div>
@@ -58,16 +67,24 @@ const Hero = () => {
                             />
                         </div>
                     </div>
-                <div className="mt-4 flex justify-between">
-                    <div className="flex items-center gap-4">
-                        <p>Search Filter: </p>
-                        <p className="text-white bg-black rounded-full px-2 py-1">without Driver</p>
-                        <p className="text-black rounded-full px-2 py-1">with Driver</p>
+
+                    {/* Search Filter & Button */}
+                    <div className="mt-4 flex flex-col md:flex-row md:justify-between gap-3">
+                        <div className="flex flex-wrap items-center gap-2">
+                            <p className="font-medium">Search Filter:</p>
+                            <p className="text-white bg-black rounded-full px-3 py-1 text-sm cursor-pointer">
+                                Without Driver
+                            </p>
+                            <p className="text-black bg-gray-200 rounded-full px-3 py-1 text-sm cursor-pointer">
+                                With Driver
+                            </p>
+                        </div>
+                        <div>
+                            <button className="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded-lg w-full md:w-auto">
+                                Search
+                            </button>
+                        </div>
                     </div>
-                    <div>
-                        <button className="">Search</button>
-                    </div>
-                </div>
                 </div>
             </div>
         </div>
