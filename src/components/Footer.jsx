@@ -17,10 +17,6 @@ const Footer = () => {
             <img src={carLogo} alt="Car Rental" className="w-8 h-8" />
             <p className="text-white text-xl font-bold">Car Rental</p>
           </div>
-          <p className="text-sm leading-relaxed">
-            Faucibus faucibus pellentesque dictum turpis. Id pellentesque
-            turpis massa a id iaculis lorem turpis euismod. Purus at.
-          </p>
         </div>
 
         {/* Address */}
@@ -29,7 +25,7 @@ const Footer = () => {
             <img src={locationIcon} alt="Location" className="w-5 h-5" />
           </div>
           <div>
-            <p className="text-white font-semibold">Address</p>
+            <p className="font-semibold">Address</p>
             <p className="text-sm">123 Main Street, New York, USA</p>
           </div>
         </div>
@@ -40,7 +36,7 @@ const Footer = () => {
             <img src={emailIcon} alt="Email" className="w-5 h-5" />
           </div>
           <div>
-            <p className="text-white font-semibold">Email</p>
+            <p className=" font-semibold">Email</p>
             <p className="text-sm">aaa@yahoo.com</p>
           </div>
         </div>
@@ -51,7 +47,7 @@ const Footer = () => {
             <img src={phoneIcon} alt="Phone" className="w-5 h-5" />
           </div>
           <div>
-            <p className="text-white font-semibold">Phone</p>
+            <p className="font-semibold">Phone</p>
             <p className="text-sm">+91 3265149874</p>
           </div>
         </div>

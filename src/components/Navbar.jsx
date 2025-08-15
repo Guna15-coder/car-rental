@@ -1,98 +1,55 @@
-import React, { useState } from "react";
-import logo from "../assets/logo.svg";
-import { Link } from "react-router-dom";
-
+import React from 'react'
+import car from "../assets/car.svg"
 const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false);
+    return (
+        <div className='flex justify-between items-center full px-4 py-2'>
+            <div className='flex gap-8 items-center'>
+                <div className='flex justify-start items-center gap-2'>
+                    <div className='w-[40px] '><img className='w-full h-full' src={car} alt="" /></div>
+                    <h1 className='text-white font-bold text-2xl'>Horizone</h1>
+                </div>
+                <div className='text-white font-semibold flex gap-8'>
+                    <p className=''>Hotel</p>
+                    <p className=''>Flight</p>
+                    <p className=''>Train</p>
+                    <p className=''>Travel</p>
+                    <p className=''>Car Rental</p>
+                </div>
 
-  const menuItems = [
-    { to: "/", label: "Home" },
-    { to: "#vehicle", label: "Vehicles" },
-    { to: "/details", label: "Details" },
-    { to: "/aboutus", label: "About Us" },
-    { to: "/contactus", label: "Contact Us" },
-  ];
+            </div>
 
-  return (
-    <div className="fixed top-0 left-0 right-0 z-50 bg-white">
-      <div className="max-w-7xl mx-auto px-4 h-[70px] flex justify-between items-center">
-        {/* Logo */}
-        <div className="flex items-center gap-2">
-          <img src={logo} alt="logo" className="w-[30px] object-contain" />
-        </div>
-
-        {/* Desktop Menu */}
-        <div className="hidden md:flex items-center space-x-6">
-          {menuItems.map((item) => (
-            <Link
-              key={item.to}
-              to={item.to}
-              className="relative group font-semibold hover:bg-transparent hover:border-none hover:shadow-none"
-            >
-              {item.label}
-              <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-black transition-all duration-300 group-hover:w-full"></span>
-            </Link>
-          ))}
-        </div>
-
-        {/* Desktop Login Button */}
-        <div className="hidden md:block">
-          <button className="btn bg-transparent border-2 border-black hover:bg-neutral hover:text-white">
-            Login
-          </button>
-        </div>
-
-        {/* Mobile Hamburger */}
-        <div className="block md:hidden">
-          <button onClick={() => setIsOpen(!isOpen)}>
-            <svg
-              className="w-6 h-6"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              {isOpen ? (
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M6 18L18 6M6 6l12 12"
+            <div className="p-4 flex items-center justify-center">
+                <input
+                    type="text"
+                    placeholder="Search..."
+                    className="bg-white/10 backdrop-blur-md border border-white/20 rounded-lg px-4 py-2 text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-white/30"
                 />
-              ) : (
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M4 6h16M4 12h16M4 18h16"
-                />
-              )}
-            </svg>
-          </button>
-        </div>
-      </div>
+            </div>
 
-      {/* Mobile Menu Dropdown */}
-      {isOpen && (
-        <div className="md:hidden bg-white shadow-md">
-          {menuItems.map((item) => (
-            <Link
-              key={item.to}
-              to={item.to}
-              onClick={() => setIsOpen(false)}
-              className="block px-4 py-2 border-b hover:bg-gray-100"
-            >
-              {item.label}
-            </Link>
-          ))}
-          <div className="p-4">
-            <button className="btn w-full bg-transparent border-2 border-black hover:bg-neutral hover:text-white">
-              Login
-            </button>
-          </div>
-        </div>
-      )}
-    </div>
-  );
-};
+            <div className="hidden lg:flex items-center space-x-4">
+              {/* Language Selector */}
+              <div className="flex items-center space-x-2 px-3 py-2 rounded-lg hover:bg-white/10 transition-colors cursor-pointer">
+                <div className="w-6 h-6 bg-gradient-to-r from-green-400 to-blue-500 rounded-full flex items-center justify-center">
+                  <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zm6.93 6h-2.95c-.32-1.25-.78-2.45-1.38-3.56 1.84.63 3.37 1.91 4.33 3.56zM12 4.04c.83 1.2 1.48 2.53 1.91 3.96h-3.82c.43-1.43 1.08-2.76 1.91-3.96zM4.26 14C4.1 13.36 4 12.69 4 12s.1-1.36.26-2h3.38c-.08.66-.14 1.32-.14 2 0 .68.06 1.34.14 2H4.26zm.82 2h2.95c.32 1.25.78 2.45 1.38 3.56-1.84-.63-3.37-1.9-4.33-3.56zm2.95-8H5.08c.96-1.66 2.49-2.93 4.33-3.56C8.81 5.55 8.35 6.75 8.03 8zM12 19.96c-.83-1.2-1.48-2.53-1.91-3.96h3.82c-.43 1.43-1.08 2.76-1.91 3.96zM14.34 14H9.66c-.09-.66-.16-1.32-.16-2 0-.68.07-1.35.16-2h4.68c.09.65.16 1.32.16 2 0 .68-.07 1.34-.16 2zm.25 5.56c.6-1.11 1.06-2.31 1.38-3.56h2.95c-.96 1.65-2.49 2.93-4.33 3.56zM16.36 14c.08-.66.14-1.32.14-2 0-.68-.06-1.34-.14-2h3.38c.16.64.26 1.31.26 2s-.1 1.36-.26 2h-3.38z"/>
+                  </svg>
+                </div>
+                <span className="nav-text text-black font-medium transition-colors duration-300">EN</span>
+              </div>
 
-export default Navbar;
+              {/* Login Button */}
+              <button className="nav-text px-6 py-2 text-white font-medium hover:bg-white/10 rounded-xl transition-all duration-200 transform hover:scale-105">
+                Log in
+              </button>
+
+              {/* Sign Up Button */}
+              <button className="px-6 py-2 bg-white text-gray-900 font-semibold rounded-xl hover:bg-gray-100 transition-all duration-200 transform hover:scale-105 shadow-lg hover:shadow-xl">
+                Sign up
+              </button>
+            </div>
+
+        </div>
+    )
+}
+
+export default Navbar

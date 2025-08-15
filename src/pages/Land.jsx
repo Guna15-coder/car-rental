@@ -9,15 +9,9 @@ import Mobile from '../components/Mobile'
 import Footer from '../components/Footer'
 const Land = () => {
   return (
-    <div className='max-w-7xl m-auto'>
-        <Navbar />
+    <div className='m-3 rounded-lg'>
         <Hero />
-        <CTA />
-        <Rule />
-        <CarData />
-        <Overview />
-        <Mobile />
-        <Footer />
+        
     </div>
   )
 }

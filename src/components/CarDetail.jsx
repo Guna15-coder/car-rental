@@ -9,90 +9,145 @@ import Navbar from "./Navbar";
 
 const CarDetail = () => {
   return (
-    <div className="max-w-7xl m-auto mt-24 px-4">
-      <Navbar />
-      <div className="w-full">
-        <h1 className="text-4xl font-bold mb-6">BMW</h1>
+    <div className="min-h-screen bg-gray-50">
+      <div className="max-w-7xl mx-auto pt-24 px-6">
+        <Navbar />
+        
+        {/* Header */}
+        <div className="mb-12">
+          <div className="flex items-center justify-between">
+            <div>
+              <h1 className="text-5xl font-bold text-gray-900 mb-2">BMW</h1>
+              <p className="text-gray-600 text-lg">Luxury sedan with premium features</p>
+            </div>
+            <div className="hidden md:block">
+              <span className="bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm font-medium">
+                Available
+              </span>
+            </div>
+          </div>
+        </div>
 
-        {/* Main layout */}
-        <div className="flex flex-col md:flex-row gap-6">
-          {/* Left - Car Image */}
-          <div className="flex-1">
-            <img
-              src="https://images.pexels.com/photos/170811/pexels-photo-170811.jpeg"
-              alt="BMW"
-              className="w-full h-auto rounded-lg shadow-md"
-            />
+        {/* Main Content */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+          {/* Car Image - Takes more space */}
+          <div className="lg:col-span-2">
+            <div className="relative group">
+              <img
+                src="https://images.pexels.com/photos/170811/pexels-photo-170811.jpeg"
+                alt="BMW"
+                className="w-full h-[400px] lg:h-[500px] object-cover rounded-2xl shadow-xl transition-transform duration-300 group-hover:scale-[1.02]"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent rounded-2xl"></div>
+            </div>
           </div>
 
-          {/* Right - Specifications */}
-          <div className="flex-1">
-            <h2 className="text-2xl font-semibold mb-4">Technical Specification</h2>
-
-            <div className="grid grid-cols-2 gap-4">
-              <div className="flex items-center gap-3 border p-3 rounded-lg">
-                <img src={gear} alt="Gear Box" className="w-6 h-6" />
-                <div>
-                  <p className="font-medium">Gear Box</p>
-                  <p className="text-gray-600">Automatic</p>
+          {/* Specifications & Booking */}
+          <div className="lg:col-span-1 space-y-8">
+            {/* Technical Specifications */}
+            <div className="bg-white rounded-2xl p-6 shadow-lg">
+              <h2 className="text-2xl font-bold text-gray-900 mb-6">
+                Technical Specs
+              </h2>
+              
+              <div className="space-y-4">
+                <div className="flex items-center gap-4 p-3 bg-gray-50 rounded-xl hover:bg-gray-100 transition-colors">
+                  <div className="bg-blue-100 p-2 rounded-lg">
+                    <img src={gear} alt="Gear Box" className="w-5 h-5" />
+                  </div>
+                  <div className="flex-1">
+                    <p className="font-semibold text-gray-900">Gear Box</p>
+                    <p className="text-gray-600 text-sm">Automatic</p>
+                  </div>
                 </div>
-              </div>
 
-              <div className="flex items-center gap-3 border p-3 rounded-lg">
-                <img src={fuel} alt="Fuel" className="w-6 h-6" />
-                <div>
-                  <p className="font-medium">Fuel</p>
-                  <p className="text-gray-600">Petrol</p>
+                <div className="flex items-center gap-4 p-3 bg-gray-50 rounded-xl hover:bg-gray-100 transition-colors">
+                  <div className="bg-green-100 p-2 rounded-lg">
+                    <img src={fuel} alt="Fuel" className="w-5 h-5" />
+                  </div>
+                  <div className="flex-1">
+                    <p className="font-semibold text-gray-900">Fuel Type</p>
+                    <p className="text-gray-600 text-sm">Petrol</p>
+                  </div>
                 </div>
-              </div>
 
-              <div className="flex items-center gap-3 border p-3 rounded-lg">
-                <img src={doors} alt="Doors" className="w-6 h-6" />
-                <div>
-                  <p className="font-medium">Doors</p>
-                  <p className="text-gray-600">4</p>
+                <div className="flex items-center gap-4 p-3 bg-gray-50 rounded-xl hover:bg-gray-100 transition-colors">
+                  <div className="bg-orange-100 p-2 rounded-lg">
+                    <img src={doors} alt="Doors" className="w-5 h-5" />
+                  </div>
+                  <div className="flex-1">
+                    <p className="font-semibold text-gray-900">Doors</p>
+                    <p className="text-gray-600 text-sm">4</p>
+                  </div>
                 </div>
-              </div>
 
-              <div className="flex items-center gap-3 border p-3 rounded-lg">
-                <img src={ac} alt="Air Conditioner" className="w-6 h-6" />
-                <div>
-                  <p className="font-medium">Air Conditioner</p>
-                  <p className="text-gray-600">Yes</p>
+                <div className="flex items-center gap-4 p-3 bg-gray-50 rounded-xl hover:bg-gray-100 transition-colors">
+                  <div className="bg-cyan-100 p-2 rounded-lg">
+                    <img src={ac} alt="Air Conditioner" className="w-5 h-5" />
+                  </div>
+                  <div className="flex-1">
+                    <p className="font-semibold text-gray-900">Air Conditioner</p>
+                    <p className="text-gray-600 text-sm">Yes</p>
+                  </div>
                 </div>
-              </div>
 
-              <div className="flex items-center gap-3 border p-3 rounded-lg">
-                <img src={seats} alt="Seats" className="w-6 h-6" />
-                <div>
-                  <p className="font-medium">Seats</p>
-                  <p className="text-gray-600">5</p>
+                <div className="flex items-center gap-4 p-3 bg-gray-50 rounded-xl hover:bg-gray-100 transition-colors">
+                  <div className="bg-purple-100 p-2 rounded-lg">
+                    <img src={seats} alt="Seats" className="w-5 h-5" />
+                  </div>
+                  <div className="flex-1">
+                    <p className="font-semibold text-gray-900">Seats</p>
+                    <p className="text-gray-600 text-sm">5 People</p>
+                  </div>
                 </div>
-              </div>
 
-              <div className="flex items-center gap-3 border p-3 rounded-lg">
-                <img src={distance} alt="Total Distance" className="w-6 h-6" />
-                <div>
-                  <p className="font-medium">Total Distance</p>
-                  <p className="text-gray-600">25,000 km</p>
+                <div className="flex items-center gap-4 p-3 bg-gray-50 rounded-xl hover:bg-gray-100 transition-colors">
+                  <div className="bg-red-100 p-2 rounded-lg">
+                    <img src={distance} alt="Total Distance" className="w-5 h-5" />
+                  </div>
+                  <div className="flex-1">
+                    <p className="font-semibold text-gray-900">Mileage</p>
+                    <p className="text-gray-600 text-sm">25,000 km</p>
+                  </div>
                 </div>
               </div>
             </div>
 
-            <div className="mt-4">
-                <button className="btn btn-neutral">Book now</button>
+            {/* Booking Button */}
+            <div className="bg-white rounded-2xl p-6 shadow-lg">
+              <div className="text-center space-y-4">
+                <div>
+                  <p className="text-gray-600 text-sm">Starting from</p>
+                  <p className="text-3xl font-bold text-gray-900">$89<span className="text-lg text-gray-600">/day</span></p>
+                </div>
+                <button className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-4 px-6 rounded-xl transition-all duration-200 transform hover:scale-105 shadow-lg hover:shadow-xl">
+                  Book Now
+                </button>
+                <p className="text-xs text-gray-500">Free cancellation up to 24 hours</p>
+              </div>
             </div>
+          </div>
+        </div>
 
-            {/* Car Equipments */}
-            <div className="mt-6">
-              <h2 className="text-2xl font-semibold mb-3">Car Equipments</h2>
-              <ul className="list-disc list-inside text-gray-700">
-                <li>GPS Navigation</li>
-                <li>Bluetooth Connectivity</li>
-                <li>Rear Camera</li>
-                <li>ABS Braking System</li>
-                <li>LED Headlights</li>
-              </ul>
+        {/* Car Equipments - Full Width */}
+        <div className="mt-12 mb-12">
+          <div className="bg-white rounded-2xl p-8 shadow-lg">
+            <h2 className="text-3xl font-bold text-gray-900 mb-6">Car Equipment & Features</h2>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              {[
+                { name: "GPS Navigation", icon: "🗺️" },
+                { name: "Bluetooth Connectivity", icon: "📱" },
+                { name: "Rear Camera", icon: "📷" },
+                { name: "ABS Braking System", icon: "🛡️" },
+                { name: "LED Headlights", icon: "💡" },
+                { name: "Premium Sound System", icon: "🔊" }
+              ].map((equipment, index) => (
+                <div key={index} className="flex items-center gap-3 p-4 bg-gray-50 rounded-xl hover:bg-gray-100 transition-colors">
+                  <span className="text-2xl">{equipment.icon}</span>
+                  <span className="font-medium text-gray-700">{equipment.name}</span>
+                </div>
+              ))}
             </div>
           </div>
         </div>
